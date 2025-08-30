@@ -254,7 +254,7 @@ const sendMessage = async () => {
             ))}
             {isAiTyping && (
               <div className="ai-typing">
-                AI is thinking<span className="typing-dots"><span></span><span></span><span></span></span>
+                <span className="typing-dots"><span></span><span></span><span></span></span>
               </div>
             )}
           </div>
