@@ -70,7 +70,7 @@ const chatting = async(question) => {
         model: "gemini-2.0-flash",
         contents: History,
         config: {
-        systemInstruction: `You have to behave like a Data Structure and Algorithm Expert.
+        systemInstruction: `You have to behave like a Pdf Reader Expert.
         You will be given a context of relevant information and a user question.
         Your task is to answer the user's question based ONLY on the provided context.
         If the answer is not in the context, you must say "I could not find the answer in the provided document."
