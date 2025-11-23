@@ -11,6 +11,7 @@ function App() {
   const [isUploading, setIsUploading] = useState(false);
   const [isAiTyping, setIsAiTyping] = useState(false);
   const fileInputRef = useRef(null);
+  const BASE_API = import.meta.env.VITE_BASE_API;
 
   useEffect(() => {
   // Auto-scroll to bottom when new messages are added
@@ -66,7 +67,7 @@ const uploadPdf = async (file) => {
     formData.append('pdf', file);
     
     // Make API call to upload PDF
-    const response = await fetch('http://localhost:8080/pdf/upload', {
+    const response = await fetch(`${BASE_API}/pdf/upload`, {
       method: 'POST',
       body: formData,
     });
@@ -94,7 +95,7 @@ const uploadPdf = async (file) => {
 
 const removePdf = async () => {
   try {
-    const response = await fetch("http://localhost:8080/pdf/delete", {
+    const response = await fetch(`${BASE_API}/pdf/delete`, {
       method: "DELETE",
     });
     
@@ -132,7 +133,7 @@ const sendMessage = async () => {
   
   try {
     // Make API call to your chat endpoint
-    const response = await fetch('http://localhost:8080/query', {
+    const response = await fetch(`${BASE_API}/query`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
